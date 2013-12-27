@@ -1,0 +1,48 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix ore: <http://www.openarchives.org/ore/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix ro: <http://purl.org/wf4ever/ro#> .
+@prefix schema: <http://schema.org/> .
+@prefix xhv: <http://www.w3.org/1999/xhtml/vocab#> .
+@base <http://rohub.linkeddata.es/motifs_bundle_page-FGCS/index.html#> .
+
+<http://purl.org/net/ro-motifPaper> a ro:ResearchObject,
+        ore:Aggregation;
+    dc:creator <http://delicias.dia.fi.upm.es/members/DGarijo/#me>;
+    dc:title "Common Motifs in Scientific Workflows: An Empirical Analysis"@en;
+    schema:creator <http://delicias.dia.fi.upm.es/members/DGarijo/#me>;
+    schema:name "Common Motifs in Scientific Workflows: An Empirical Analysis"@en;
+    ore:aggregates <http://mayor2.dia.fi.upm.es/oeg-upm/files/dgarijo/motifAnalysis/ConsolidatedData-FinalSubmission-NEWHierarchy.xlsx>,
+        <http://mayor2.dia.fi.upm.es/oeg-upm/files/dgarijo/motifAnalysis/WfCatalogue-AdditionalGalaxyWfs.xlsx>,
+        <http://mayor2.dia.fi.upm.es/oeg-upm/files/dgarijo/motifAnalysis/WfCatalogue-AdditionalVistrailsWfsWithDomainsRevisited.xlsx>,
+        <http://mayor2.dia.fi.upm.es/oeg-upm/files/dgarijo/motifAnalysis/WfCatalogue-AdditionalWingsDomains.xlsx>,
+        <http://mayor2.dia.fi.upm.es/oeg-upm/files/dgarijo/motifAnalysis/Workflows-Bundle/Galaxy/>,
+        <http://mayor2.dia.fi.upm.es/oeg-upm/files/dgarijo/motifAnalysis/Workflows-Bundle/Taverna/>,
+        <http://mayor2.dia.fi.upm.es/oeg-upm/files/dgarijo/motifAnalysis/Workflows-Bundle/Vistrails/>,
+        <http://mayor2.dia.fi.upm.es/oeg-upm/files/dgarijo/motifAnalysis/Workflows-Bundle/Wings/>,
+        <http://mayor2.dia.fi.upm.es/oeg-upm/files/dgarijo/motifAnalysis/t2_workflow_set_eSci2012.v.0.9_FGCS.xls>;
+    ore:isDescribedBy <>;
+    xhv:license <http://creativecommons.org/licenses/by-nc-sa/2.0/>;
+    prov:wasAttributedTo <http://delicias.dia.fi.upm.es/members/DGarijo/#me> .
+
+<> dc:creator <http://delicias.dia.fi.upm.es/members/DGarijo/#me>;
+    schema:creator <http://delicias.dia.fi.upm.es/members/DGarijo/#me>;
+    prov:wasAttributedTo <http://delicias.dia.fi.upm.es/members/DGarijo/#me> .
+
+<http://mayor2.dia.fi.upm.es/oeg-upm/files/dgarijo/motifAnalysis/ConsolidatedData-FinalSubmission-NEWHierarchy.xlsx> a ro:Resource .
+
+<http://mayor2.dia.fi.upm.es/oeg-upm/files/dgarijo/motifAnalysis/WfCatalogue-AdditionalGalaxyWfs.xlsx> a ro:Resource .
+
+<http://mayor2.dia.fi.upm.es/oeg-upm/files/dgarijo/motifAnalysis/WfCatalogue-AdditionalVistrailsWfsWithDomainsRevisited.xlsx> a ro:Resource .
+
+<http://mayor2.dia.fi.upm.es/oeg-upm/files/dgarijo/motifAnalysis/WfCatalogue-AdditionalWingsDomains.xlsx> a ro:Resource .
+
+<http://mayor2.dia.fi.upm.es/oeg-upm/files/dgarijo/motifAnalysis/Workflows-Bundle/Galaxy/> a ro:Resource .
+
+<http://mayor2.dia.fi.upm.es/oeg-upm/files/dgarijo/motifAnalysis/Workflows-Bundle/Taverna/> a ro:Resource .
+
+<http://mayor2.dia.fi.upm.es/oeg-upm/files/dgarijo/motifAnalysis/Workflows-Bundle/Vistrails/> a ro:Resource .
+
+<http://mayor2.dia.fi.upm.es/oeg-upm/files/dgarijo/motifAnalysis/Workflows-Bundle/Wings/> a ro:Resource .
+
+<http://mayor2.dia.fi.upm.es/oeg-upm/files/dgarijo/motifAnalysis/t2_workflow_set_eSci2012.v.0.9_FGCS.xls> a ro:Resource .
