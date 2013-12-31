@@ -21,8 +21,13 @@ package latextorocreator;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 
 /**
@@ -50,8 +55,8 @@ public class ROCreator {
                 if(!dir.exists())dir.mkdir();
                 String title = "Title goes here";
                 String abstractSection = "Here you should see your abstract section";
-                if(!"".equals(latexFilePath)){
-                    LatexParser p = new LatexParser("sigproc-sp.tex");
+                if(latexFilePath!=null && !"".equals(latexFilePath)){
+                    LatexParser p = new LatexParser(latexFilePath);
                     title = p.getTitle();
                     abstractSection = p.getAbstractSection();                            
                 }                
@@ -61,7 +66,7 @@ public class ROCreator {
                 textToHTML+=abstractSection;
                 textToHTML+=ConstantsForHTML.bodyThirdAndInputsAndResults;
                 textToHTML+=ConstantsForHTML.bodyFourthAndAboutAuthors;
-                if(creators.isEmpty()){
+                if(creators == null || creators.isEmpty()){
                     textToHTML+="<tr><td style=\"padding-left:10px\">First author name</td><td style=\"padding-left:10px\">Author description or institution</td></tr>";
                 }else{
                     Iterator it = creators.iterator();
@@ -76,20 +81,89 @@ public class ROCreator {
                 textToHTML+=ConstantsForHTML.bodyFifthAndEnd;
                 /**
                  * Save file to the desired folder (along with the rest of the resources)
-                 */
-                System.out.println("Generating HTML file "+savePath+File.separator+"ro.html...");
-                FileWriter fstreamTemplate = new FileWriter(savePath+File.separator+"ro.html");
+                 */                 
+                System.out.println("Generating HTML file "+savePath+File.separator +"myResearchObject"+new Date().getTime()+".html...");
+                FileWriter fstreamTemplate = new FileWriter(savePath+File.separator+"myResearchObject"+new Date().getTime()+".html");
                 BufferedWriter outTemplate = new BufferedWriter(fstreamTemplate);
                 outTemplate.write(textToHTML);
                 outTemplate.close();
                 fstreamTemplate.close();
-                System.out.println("Done!!");
+                System.out.println("Done. Copying the rest of the html resources...");
+                
+                //Copy of the rest of the resources of the html web page.
+                //As I haven't found any other way to embed the reosurces in the
+                //dist file and copy them afterwards to the folder selected by the
+                //user, this is the way it is done right now.
+                
+//                File f = new File ("resources/flex-slider/flexslider.css");
+                String [] flexSlider = ConstantsForHTML.resourcesFlexSlider;
+                String [] flexSliderTheme = ConstantsForHTML.resourcesFlexSliderTheme;
+                String [] images = ConstantsForHTML.resourcesImages;
+                String [] scripts = ConstantsForHTML.resourcesScripts;
+                String [] styles = ConstantsForHTML.resourcesStyles;
+                String [] stylesFonts = ConstantsForHTML.resourcesStylesFonts;
+                
+                File flexSliderFolder = new File(savePath+File.separator+ "flex-slider");
+                flexSliderFolder.mkdir();
+                File flexSliderThemeFolder = new File(flexSliderFolder.getAbsolutePath()+File.separator+ "theme");
+                flexSliderThemeFolder.mkdir();
+                File imagesFolder = new File(savePath+File.separator+ "images");
+                imagesFolder.mkdir();
+                File scriptsFolder = new File(savePath+File.separator+ "scripts");
+                scriptsFolder.mkdir();
+                File stylesFolder = new File(savePath+File.separator+ "styles");
+                stylesFolder.mkdir();
+                File fontsFolder = new File(stylesFolder.getAbsolutePath()+File.separator+ "Fonts");
+                fontsFolder.mkdir();
+                
+                copyResourceFolder(flexSlider, flexSliderFolder.getAbsolutePath());
+                copyResourceFolder(flexSliderTheme, flexSliderThemeFolder.getAbsolutePath());
+                copyResourceFolder(images, imagesFolder.getAbsolutePath());
+                copyResourceFolder(scripts, scriptsFolder.getAbsolutePath());
+                copyResourceFolder(styles, stylesFolder.getAbsolutePath());
+                copyResourceFolder(stylesFonts, fontsFolder.getAbsolutePath());               
+                System.out.println("Done.");
+                
             }catch(Exception e){
                 System.err.println("Error while saving the Research Object: "+e.getMessage());
             }
     }
-//    queda: hacer la copia de ficheros a carpeta destino; si no existe crearla
+    
+    private void copyResourceFolder(String[] resources, String savePath) throws IOException{
+        for(int i=0; i<resources.length;i++){
+            String aux = resources[i].substring(resources[i].lastIndexOf("/")+1,resources[i].length());
+            File b = new File(savePath+File.separator+aux);
+            b.createNewFile();                
+            copyROFile(resources[i], b);
+        }
+    }
+    
+    /**
+     * Method used to copy all the RO related files: styles, images, etc.
+     * @param source
+     * @param dest
+     * @throws IOException 
+     */
+    private void copyROFile(String resourceName, File dest) throws IOException {
+        InputStream is = null;
+        OutputStream os = null;
+        try {
+            is = ROCreator.class.getResourceAsStream(resourceName);//new FileInputStream(source);
+            os = new FileOutputStream(dest);
+            byte[] buffer = new byte[1024];
+            int length;
+            while ((length = is.read(buffer)) > 0) {
+                os.write(buffer, 0, length);
+            }
+        }
+        finally {
+            is.close();
+            os.close();
+        }
+    }
+//    queda: copiar ficheros con el metodo (^).
 //           con la GUI: completar GUI
+//           comprobar que el html producido sea correcto.
     public static void main(String[]args){
         //parse arguments -l (latex), -s (save as) and -c (creator)
         int i=0;

@@ -2,26 +2,35 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /*
- * ROCreatorForm.java
+ * Copyright 2012-2013 Ontology Engineering Group, Universidad Politécnica de Madrid, Spain
  *
- * Created on 26-dic-2013, 12:38:18
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 package latextorocreator;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
- * @author Monen
+ * @author Daniel Garijo
  */
 public class ROCreatorGUI extends javax.swing.JFrame {
     boolean loadLatexFileEnabled;
@@ -54,7 +63,7 @@ public class ROCreatorGUI extends javax.swing.JFrame {
         buttonGenerateRO = new javax.swing.JButton();
         loadLatexFile = new javax.swing.JCheckBox();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTextAreaCreators = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         textFieldPath = new javax.swing.JTextField();
 
@@ -78,9 +87,9 @@ public class ROCreatorGUI extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jTextAreaCreators.setColumns(20);
+        jTextAreaCreators.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaCreators);
 
         jLabel1.setText("Insert RO creators (one per line)");
 
@@ -133,9 +142,13 @@ public class ROCreatorGUI extends javax.swing.JFrame {
 //                   JOptionPane.showMessageDialog(this,"You must sele");
 //               }
                loadLatexFileEnabled = true;
+               loadLatexFile.setSelected(true);
+            }else{
+               loadLatexFile.setSelected(false);
             }
         }else{
             loadLatexFileEnabled = false;
+            loadLatexFile.setSelected(false);
             loadLatexFile.setText("Path to LaTeX file");
         }        
         
@@ -145,10 +158,24 @@ public class ROCreatorGUI extends javax.swing.JFrame {
         JFileChooser chooser = new JFileChooser();
         chooser.setDialogTitle("Choose a folder for saving your Research Object");            
         chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        int returnVal = chooser.showSaveDialog(this);
+        int returnVal = chooser.showSaveDialog(this);        
+        ArrayList<String> creators = new ArrayList<String>();
         if(returnVal == JFileChooser.APPROVE_OPTION) {           
-               System.out.println(chooser.getSelectedFile().getAbsolutePath());
-               llamar al resto aqui.
+               System.out.println();
+               //llamar al resto aqui.
+               try{
+                   //retrieve the creators
+                   String[] creatorsText = jTextAreaCreators.getText().split("\n");                   
+                   creators.addAll(Arrays.asList(creatorsText));
+                   if(loadLatexFileEnabled){
+                        new ROCreator().createRO(chooser.getSelectedFile().getAbsolutePath(), textFieldPath.getText(), creators);
+                   }else{
+                       new ROCreator().createRO(chooser.getSelectedFile().getAbsolutePath(), null, creators);
+                   }
+                   JOptionPane.showMessageDialog(this, "Research Object created successfully");
+               }catch(Exception e){
+                   System.err.println("Error while generating the Research Object: "+e.getMessage());
+               }
         }
     }//GEN-LAST:event_buttonGenerateROActionPerformed
 
@@ -191,7 +218,7 @@ public class ROCreatorGUI extends javax.swing.JFrame {
     private javax.swing.JButton buttonGenerateRO;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextAreaCreators;
     private javax.swing.JCheckBox loadLatexFile;
     private javax.swing.JTextField textFieldPath;
     // End of variables declaration//GEN-END:variables
