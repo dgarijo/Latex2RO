@@ -71,7 +71,7 @@ public class ROCreator {
                 }else{
                     Iterator it = creators.iterator();
                     while(it.hasNext()){
-                        textToHTML+="<tr property=\"schema:creator dc:creator\" "
+                        textToHTML+="<tr property=\"schema:creator dc:creator prov:wasAttributedTo\" "
                                 + "typeOf=\"foaf:Person\"><td style=\"padding-left:10px\" "
                                 + "property=\"foaf:name schema:name\">"+it.next()+"</td><td "
                                 + "style=\"padding-left:10px\">Author description or institution"

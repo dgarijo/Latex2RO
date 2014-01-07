@@ -29,10 +29,10 @@ public class ConstantsForHTML {
      * First part of the head page (until <title> attribute)
      */
     public static final String headFirst ="<!DOCTYPE html>\n"+
-        "<html class=\"csstransforms no-csstransforms3d csstransitions\" xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\" prefix=\"dc:http://purl.org/dc/terms/ schema: http://schema.org/ prov: http://www.w3.org/ns/prov# ore:http://www.openarchives.org/ore/terms/ ro: http://purl.org/wf4ever/ro# opt: http://purl.org/net/RO-optimization# wfprov: http://purl.org/wf4ever/wfprov# wfdesc: http://purl.org/wf4ever/wfdesc# rdfs: http://www.w3.org/2000/01/rdf-schema#\">\n"+
+        "<html>\n"+
         "<head>\n"+
-        "<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">\n"+
-        "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n";
+        "<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n"+
+        "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"/>\n";
     
     /**
      * Second part of the html head. It contains all the css and scripts used.
@@ -62,7 +62,7 @@ public class ConstantsForHTML {
      * The first part of the body, until we insert the title.
      */
     public static final String bodyFirst = 
-      "<body resource=\"\" typeOf=\"ore:Aggregation ro:ResearchObject\">\n"+
+      "<body prefix=\"dc: http://purl.org/dc/terms/ schema: http://schema.org/ prov: http://www.w3.org/ns/prov# ore: http://www.openarchives.org/ore/terms/ ro: http://purl.org/wf4ever/ro# rdfs: http://www.w3.org/2000/01/rdf-schema#\" resource=\"\" typeOf=\"ore:Aggregation ro:ResearchObject\">\n"+
       "  <span property=\"ore:isDescribedBy\" resource=\"\"></span>\n"+
       "  <div id=\"wrap\">\n"+
       "   <div id=\"sidebar\"> \n"+
@@ -95,8 +95,8 @@ public class ConstantsForHTML {
         "<div class=\"space\"> </div>\n"+
         "<div class=\"clear\"> </div>\n"+
         "<p>\n"+
-        "  <br>Here you should write a small introduction about your Research Object: what does it do,"+
-        "   the paper it describes and where it has been sent (in case it is still under  review. I would also recommend to provide a PURL (permanent url) to point to this web page.<br>\n"+
+        "  Here you should write a small introduction about your Research Object: what does it do,"+
+        "   the paper it describes and where it has been sent (in case it is still under  review. I would also recommend to provide a PURL (permanent url) to point to this web page.\n"+
         "</p>\n"+
         "</div> \n"+
         "</div>\n"+
@@ -116,7 +116,7 @@ public class ConstantsForHTML {
         "<div class=\"page\" id=\"inputs\"> \n"+
         "<div class=\"page_content\">\n"+
         "<h4  class=\"blue\"> Inputs and examples of the analysis</h4>\n"+
-        "<p>You should describe your inputs, approach and examples here. If you use datasets or other inputs, explain them here. Also annotate them in rdf-a.The more you annotate the better your experiment will be able to be reused.\n"+
+        "<p>You should describe your inputs, approach and examples here. If you use datasets or other inputs, explain them here. Also annotate them in rdf-a.The more you annotate the better your experiment will be able to be reused.</p>\n"+
         "</div>\n"+
         "</div>\n"+
         "<div class=\"page\" id=\"outputs\">\n"+
@@ -146,9 +146,9 @@ public class ConstantsForHTML {
         "Insert acknowledgemnts here if appropriate\n"+
         "<div class=\"clear\"> </div>\n"+
         "</div> \n"+
-        "<br>\n"+
+        "\n"+
         "<div class=\"page_bottom\">\n"+
-        "<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/2.0/\"><img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"http://i.creativecommons.org/l/by-nc-sa/2.0/88x31.png\" /></a><br />This page is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/2.0/\">Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic License</a>.\n"+
+        "<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/2.0/\"><img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"http://i.creativecommons.org/l/by-nc-sa/2.0/88x31.png\" /></a>This page is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/2.0/\">Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic License</a>.\n"+
         "</div>\n"+
         "</div>\n"+
         "<a class=\"gotop hidden\" href=\"#top\">Top</a>\n"+
