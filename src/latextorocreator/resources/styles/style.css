@@ -161,6 +161,9 @@ div.page {
 	margin-bottom:0;
 	padding-top:0px
 }
+div.center {
+	text-align:center
+}
 div.page_bottom{
 	margin-bottom:5px solid #dbdbdb;
 	margin-bottom:0;

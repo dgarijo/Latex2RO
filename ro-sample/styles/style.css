@@ -126,7 +126,7 @@ ul#navigation li a:link, ul#navigation li a:visited {
 }
 
 
-ul#navigation li#peque a:link, ul#navigation li#peque a:visited {
+ul#navigation li.peque a:link, ul#navigation li.peque a:visited {
 	text-decoration:none;
 	font-family:'OstrichSansBlack', Arial, sans-serif;
 	margin-bottom:1px;
@@ -161,11 +161,21 @@ div.page {
 	margin-bottom:0;
 	padding-top:0px
 }
+div.center {
+	text-align:center
+}
+div.page_bottom{
+	margin-bottom:5px solid #dbdbdb;
+	margin-bottom:0;
+	padding-top:0px;
+	text-align:center
+}
 div.page_content {
 	padding:5px 0 5px 25px
 }
 div#container h3.page_title {
 	font-family: 'OstrichSansBlack';
+	text-align:center;
 	margin-left:25px;
 	font-size:35px;
 	color:rgb(60, 114, 180);

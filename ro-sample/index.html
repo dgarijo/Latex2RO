@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html class="csstransforms no-csstransforms3d csstransitions" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" prefix="dc: 
-http://purl.org/dc/terms/ schema: http://schema.org/ prov: http://www.w3.org/ns/prov# ore: http://www.openarchives.org/ore/terms/ 
+<html prefix="dc: http://purl.org/dc/terms/ schema: http://schema.org/ prov: http://www.w3.org/ns/prov# ore: http://www.openarchives.org/ore/terms/ 
 ro: http://purl.org/wf4ever/ro# opt: http://purl.org/net/RO-optimization# wfprov: http://purl.org/wf4ever/wfprov# wfdesc: http://purl.org/wf4ever/wfdesc#
 rdfs: http://www.w3.org/2000/01/rdf-schema#">
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta charset="UTF-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta property="dc:creator prov:wasAttributedTo schema:creator" content="http://delicias.dia.fi.upm.es/members/DGarijo/#me" />
 <title>Common Motifs in Scientific Workflows: An Empirical Analysis</title>
 
-<meta name="viewport" content="width=device-width,initial-scale=1"></meta>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 
 <link rel="stylesheet" href="styles/style.css" media="screen" />
 <link rel="stylesheet" href="styles/media-queries.css" />
@@ -30,17 +29,10 @@ rdfs: http://www.w3.org/2000/01/rdf-schema#">
 <!--<link rel="canonical" href="http://www.oeg-upm.net/files/dgarijo/motifAnalysisSite/index.html" />-->
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
-<span resource="http://purl.org/net/ro-motifPaper" typeOf="ore:Aggregation ro:ResearchObject">
-<span property="ore:isDescribedBy" resource=""></span>
-<span property="dc:creator prov:wasAttributedTo schema:creator" resource="http://delicias.dia.fi.upm.es/members/DGarijo/#me"></span>
-</span>
-
-<span resource="">
-<span property="dc:creator prov:wasAttributedTo schema:creator" resource="http://delicias.dia.fi.upm.es/members/DGarijo/#me"></span>
-</span>
-
 </head>
-<body resource="http://purl.org/net/ro-motifPaper">
+<body resource="http://purl.org/net/ro-motifPaper" typeOf="ore:Aggregation ro:ResearchObject">
+	<span property="ore:isDescribedBy" resource=""></span>
+	<span property="dc:creator prov:wasAttributedTo schema:creator" resource="http://delicias.dia.fi.upm.es/members/DGarijo/#me"></span>
 	
 <div id="wrap"> 
   <!-- wrapper -->
@@ -50,28 +42,29 @@ rdfs: http://www.w3.org/2000/01/rdf-schema#">
     <!-- navigation menu -->
     <ul id="navigation">
       <li><a href="#home" class="active">Workflow Motif Analysis and Catalogue</a></li>
-      <li id="peque"><a href="#abstract">Abstract</a></li>
-	  <li id="peque"><a href="#inputs">Inputs and Examples</a></li>
-	  <li id="peque"><a href="#outputs">Results</a></li>
+      <li class="peque"><a href="#abstract">Abstract</a></li>
+	  <li class="peque"><a href="#inputs">Inputs and Examples</a></li>
+	  <li class="peque"><a href="#outputs">Results</a></li>
       <!--<li><a href="#ontology">The Workflow Motif Ontology</a></li>-->
       <li><a href="#auth">About the authors</a></li>
     </ul>
-	<div style="bottom:0; position : absolute">
-		<div style="float: left; padding-left: 10px; width:110px;">
-		<a href="http://www.researchobject.org/"><img src="images/rologo.png" alt="This page is RO enabled" title="This page is described according to the RO Model" width="90px"></img></a>
-		</div>
-		<div style="float: left">
-		<img src="images/rdf.gif" alt="This page is described in rdf-a" title="This page is described in rdf-a" width="90px"></img>
-		</div>
+		<div style="bottom:0; position : absolute">
+                 <div style="float: left; padding-left: 25px; width:80px;">
+                 <a href="http://www.researchobject.org/"><img src="images/rologo.png" alt="This page is RO enabled" title="This page is described according to the RO Model" width="60"/></a>
+                 </div>
+                 <div style="float: left; padding-left: 25px; width:80px;">
+                 <img src="images/rdf.gif" alt="This page is described in rdf-a" title="This page is described in rdf-a" width="60"/>
+                 </div>
+         </div>	
 	</div>	
-  </div>
+  
   <div id="container"> 
     <!-- page container -->
 	
     <div class="page" id="home"> 
       <!-- page home -->
       <div class="page_content">
-       <h3  class="page_title" align="center" property="dc:title schema:name">Common Motifs in Scientific Workflows: <br>An Empirical Analysis</h3>
+       <h3  class="page_title" property="dc:title schema:name">Common Motifs in Scientific Workflows: <br>An Empirical Analysis</h3>
 		<div class="space"> </div>
 		<div class="clear"> </div>
 	
@@ -91,7 +84,7 @@ rdfs: http://www.w3.org/2000/01/rdf-schema#">
 		<h4 class="blue"> Abstract</h4>
 			<div class="space"> </div>
 			<div class="clear"> </div>
-				<p>
+				<p property="dc:abstract">
 					Workflow technology continues to play an important role as a means for specifying and enacting computational experiments in modern Science.
 					Reusing and repurposing workflows allow scientists to do new experiments faster, since the workflows capture useful expertise from others. 
 					As workflow libraries grow, scientists face the challenge of finding workflows appropriate for their task, understanding what each workflow
@@ -122,14 +115,13 @@ rdfs: http://www.w3.org/2000/01/rdf-schema#">
 				<li><b>Wings</b>: 89 workflows analyzed (<b>accessible <a property="ore:aggregates" href="http://mayor2.dia.fi.upm.es/oeg-upm/files/dgarijo/motifAnalysis/Workflows-Bundle/Wings/" typeOf="ro:Resource">here</a></b>)</li>				
 				<li><b>Galaxy</b>: 26 workflows analyzed (<b>accessible <a property="ore:aggregates" href="http://mayor2.dia.fi.upm.es/oeg-upm/files/dgarijo/motifAnalysis/Workflows-Bundle/Galaxy/" typeOf="ro:Resource">here</a></b>) </li>
 				<li><b>Vistrails</b>: 20 workflows analyzed (<b>accessible <a property="ore:aggregates" href="http://mayor2.dia.fi.upm.es/oeg-upm/files/dgarijo/motifAnalysis/Workflows-Bundle/Vistrails/" typeOf="ro:Resource">here</a></b>)</li>
-			</ul>
-			</p>			
+			</ul>						
 		   <p>
 			All workflows analyzed are modeled as directed acyclic graphs, with no conditionals or loops. Two examples can be seen in the next figures, extracted from two workflows of
 			Taverna and Wings:
 			</p>
-			<div align="center">				
-				<img src="images/taverna-wf.png" height="500"></img>
+			<div class="center">				
+				<img src="images/taverna-wf.png" height="500" alt="Sample workflow for functional genomics from the Taverna workflow system" />
 				<div>Fig 1: Sample workflow for functional genomics from the Taverna workflow system. The workflow
 					transfers data files containing proteomics data to a remote
 					server and augments several parameters for the invocation request. Then
@@ -138,8 +130,8 @@ rdfs: http://www.w3.org/2000/01/rdf-schema#">
 					downloaded from the remote server.</div>
 			</div>
 			
-			<div align="center">				
-				<img src="images/wings-wf.png" height="500" width="500"></img>
+			<div class="center">				
+				<img src="images/wings-wf.png" height="500" width="500" alt="Sample workflow fragment for drug discovery from the Wings workflow system" />
 				<div>Fig 2: Sample workflow fragment for drug discovery from the Wings workflow system. A 
 				comparison analysis is performed on two different input datasets 
 				(SMAPV2). The results are then sorted (SMAPResultSorter) and finally 
@@ -182,29 +174,29 @@ rdfs: http://www.w3.org/2000/01/rdf-schema#">
       <div class="page_content">		
 		<table>			
 			<tr>
-				<td><img src="images/dani.png" width="100" ></img></td>
+				<td><img src="images/dani.png" alt="Daniel Garijo" width="100" /></td>
 				<td style="padding-left:10px"><b><a href="http://delicias.dia.fi.upm.es/members/dgarijo/">Daniel Garijo</a></b> is a PhD student in the Ontology Engineering Group at the Artificial Intelligence Department of the Computer Science Faculty of Universidad Polit&eacute;cnica de Madrid. His research activities focus on e-Science and the Semantic web, specifically on how to increase the understandability of scientific workflows using provenance, metadata, intermediate results and Linked Data. </td>
 			</tr>
 			<tr>
-				<td><img src="images/alper.png" width="100px" height="90"></img></td>
+				<td><img src="images/alper.png" alt="Pinar Alper" width="100" height="90" /></td>
 				<td style="padding-left:10px"><b><a href="http://semanticweb.org/wiki/Pinar_Alper">Pinar Alper</a></b> is a PhD student at the School of Computer Science of the University of Manchester. Her research work focuses on abstraction of scientific worflows and distillation of provenance information for data publishing. She currently participates in the EU Wf4EVER project and the myGrid project.</td>
 			</tr>
 			<tr>
-				<td><img src="images/khalid.jpeg" width="100" height="100"></img></td>
+				<td><img src="images/khalid.jpeg" alt="Khalid Belhajjame" width="100" height="100" /></td>
 				<td style="padding-left:10px"><b><a href="http://semanticweb.org/wiki/Khalid_Belhajjame">Khalid Belhajjame</a></b> is a researcher at the University of Manchester. His general research areas are information and knowledge
 management, where he has contributed to research proposals in the fields of data integration, knowledge engineering of semantic web services, and scientific workflows. He is an active member of the W3C provenance working group, the DataONE scientific workflow and the Wf4Ever EU project.</td>
 			</tr>
 			<tr>
-				<td><img src="images/oscar.jpg" width="100" height="120"></img></td>
+				<td><img src="images/oscar.jpg" alt="Oscar Corcho" width="100" height="120"></td>
 				<td style="padding-left:10px"><b><a href="http://www.oeg-upm.net/index.php/teachers/11-ocorcho">Oscar Corcho</a></b> is an Associate Professor at Departamento de Inteligencia Artificial (Facultad de Informática , Universidad Polit&eacute;cnica de Madrid) , and he belongs to the Ontology Engineering Group.
-His research activities are focused on Semantic e-Science and Real World Internet, although he also works in the more general areas of Semantic Web and Ontological Engineering. In these areas, he has participated in a number of EU projects (Wf4Ever, PlanetData, SemsorGrid4Env, ADMIRE, OntoGrid, Esperonto, Knowledge Web and OntoWeb), and Spanish R&D projects (CENITS mIO!, España Virtual  and Buscamedia, myBigData, GeoBuddies), and has also participated in privately-funded projects like ICPS (International Classification of Patient Safety), funded by the World Health Organisation, and HALO, funded by Vulcan Inc.</td>
+His research activities are focused on Semantic e-Science and Real World Internet, although he also works in the more general areas of Semantic Web and Ontological Engineering. In these areas, he has participated in a number of EU projects (Wf4Ever, PlanetData, SemsorGrid4Env, ADMIRE, OntoGrid, Esperonto, Knowledge Web and OntoWeb), and Spanish Research and Development projects (CENITS mIO!, España Virtual  and Buscamedia, myBigData, GeoBuddies), and has also participated in privately-funded projects like ICPS (International Classification of Patient Safety), funded by the World Health Organisation, and HALO, funded by Vulcan Inc.</td>
 			</tr>
 			<tr>
-				<td><img src="images/gil.jpg" width="100" height="110"></img></td>
+				<td><img src="images/gil.jpg" alt="Yolanda Gil" width="100" height="110" /></td>
 				<td style="padding-left:10px"><b><a href="http://www.isi.edu/~gil/">Yolanda Gil</a></b> Yolanda Gil is Director of Knowledge Technologies and at the Information Sciences Institute of the University of Southern California, and Research Professor in the Computer Science Department. Her research interests include intelligent user interfaces, social knowledge collection, provenance and assessment of trust, and knowledge management in science. Her most recent work focuses on intelligent workflow systems to support collaborative data analytics at scale.</td>
 			</tr>
 			<tr>
-				<td><img src="images/carole.jpg" width="100" height="120"></img></td>
+				<td><img src="images/carole.jpg" alt="Carole Goble" width="100" height="120" /></td>
 				<td style="padding-left:10px"><b><a href="http://www.cs.man.ac.uk/~carole/">Carole Goble</a></b> is a full professor in the University of Manchester School of Computer Science, where she co-leads the Information Management Group. She has worked closely with life scientists for many years and has an international reputation in the Semantic Web, e-Science and Grid communities. Carole is the Director of the myGrid project, a team that produce and use a suite of tools designed to “help e-Scientists get on with science and get on with scientists”</td>
 			</tr>
 		</table>
@@ -220,28 +212,19 @@ His research activities are focused on Semantic e-Science and Real World Interne
       <div class="clear"> </div>
       
     </div>
-    
-	<!--
-	<div class="page" id="ack"> 
-      <!-- page industries 
-      <h3 class="page_title"> Acknowledgements</h3>
-      <div class="page_content">
-<ul></ul>
-        <div class="clear"> </div>
-      </div>
-    </div>
-    </div>-->
    
-   <br>
-    <div class="page" align="center">
-    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.0/88x31.png" /></a><br />This page is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/">Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic License</a>.
+    <div class="page">
+		<div class="page_content">
+		<div class="center">
+			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.0/88x31.png" /></a><br />This page is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/">Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic License</a>.
+		</div>
+		</div>
     </div>
   </div>
-
-
+  
 
 <a class="gotop hidden" href="#top">Top</a>
-
-
+</div>
+</div>
 
 </body></html>
