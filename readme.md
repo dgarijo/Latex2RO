@@ -1,7 +1,7 @@
-Research Object Creator
+Latex2RO
 =====================
 
-The Research Object Creator is a simple tool designed to help creating Research Objects (ROs) from LaTeX papers. Given a LaTeX file, the RO creator will extract its title and metadata and fill partially a structured HTML page annotated in RDF-a with these metadata. The HTML page can then be completed and annotated by the user providing the links to the rest of the resources used in the Research Object.
+The Latex2RO Creator is a simple tool designed to help creating Research Objects (ROs) from LaTeX papers. Given a LaTeX file, the RO creator will extract its title and metadata and fill partially a structured HTML page annotated in RDF-a with these metadata. The HTML page can then be completed and annotated by the user providing the links to the rest of the resources used in the Research Object.
 
 You can see an example of an output page here: http://http://purl.org/net/svm-opt-research-object
 Requirements
